@@ -52,7 +52,7 @@ exports.deleteIncome = async (req, res) => {
 }
 
 //Download Income Source 
-exports.downIncomeExcel = async (req, res) => {
+exports.downloadIncomeExcel = async (req, res) => {
     const userId = req.user.id;
     try {
         const income = await Income.find({ userId }).sort({ date: -1 });
@@ -61,8 +61,8 @@ exports.downIncomeExcel = async (req, res) => {
         const data = income.map((item) => ({
             Source: item.source,
             Amount: item.amount,
-            Date: item.date, // Format date as YYYY-MM-DD
-            // Date: item.date.toISOString().split('T')[0], // Format date as YYYY-MM-DD
+            // Date: item.date, // Format date as YYYY-MM-DD
+            Date: item.date.toISOString().split('T')[0], // Format date as YYYY-MM-DD
         }));
 
         const wb = xlsx.utils.book_new();
