@@ -6,12 +6,10 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
-        console.log("file",file);
         if (file) {
             setImage(file);
             //Generate preview Url from the file
             const preview = URL.createObjectURL(file);
-            console.log("preview", preview);
             setPreviewUrl(preview);
         }
     }
