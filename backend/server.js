@@ -27,8 +27,15 @@ app.use("/api/v1/income",incomeRoutes);
 app.use("/api/v1/expense",expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
 
+// Health check route
+app.get("/api/health", (req, res) => {
+    res.status(200).json({ status: "Server is running", timestamp: new Date() });
+});
+
 //Serve Uploads folder
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
