@@ -23,10 +23,9 @@ const SideMenu = ({ activeMenu }) => {
         clearUser();
         navigate("/login");
     }
-
     return <div className="w-64 h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 p-5 sticky top-[61px] z-30">
         <div className='flex flex-col items-center justify-center gap-3 mt-3 mb-7'>
-            {!user?.profileImageUrl ? (
+            {user?.profileImageUrl ? (
                 <img
                     src={user?.profileImageUrl || ""}
                     alt="profile Image"
