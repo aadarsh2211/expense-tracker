@@ -12,7 +12,8 @@ const TransactionInfoCard = ({
     date,
     amount,
     type,
-    hideDeleteBtn
+    hideDeleteBtn,
+    onDelete
 }) => {
     const getAmountStyle = (type) => {
         return type === "income" ? "bg-green-50 text-green-500" : "bg-red-50 text-red-500"
@@ -27,7 +28,7 @@ const TransactionInfoCard = ({
                     <LuUtensils />
                 )}
             </div>
-            <div className='flex-1  flex items-center justify-between '>
+            <div className='flex-1 flex items-center justify-between '>
                 <div>
                     <p className='text-sm text-gray-700 font-medium'>{title}</p>
                     <p className='text-xs text-gray-400 mt-1'>{date}</p>

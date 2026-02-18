@@ -56,7 +56,6 @@ const SignUp = () => {
                 password,
                 profileImageUrl,
             });
-            console.log("Signup Response:", response.data);
             const { token, user } = response.data;
 
             if(token){

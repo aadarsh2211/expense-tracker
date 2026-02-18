@@ -39,7 +39,7 @@ const Home = () => {
                 setDashboardData(response.data);
             }
         } catch (error) {
-            console.log("Something went wrong fetching dashboard data:", error);
+            console.error("Something went wrong fetching dashboard data:", error);
         }
         finally {
             setLoading(false);
