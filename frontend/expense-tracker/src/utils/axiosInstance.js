@@ -1,8 +1,7 @@
 import axois from "axios";
-import { BASE_URL } from "./apiPath";
 
 const axiosInstance = axois.create({
-    baseURL: BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 10000, //10 seconds timeout
     headers: {
         "Content-Type": "application/json",
